@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <!-- Desktop Nav-Bar Icons -->
+<div id="nav_bar"
+class="flex items-center bg-black p-5 mt-10 gap-12 rounded-full max-md:hidden shadow-[inset_0px_0px_40px_0px_#3A3A3A] overflow-hidden">
+
+<!-- Home Icon -->
+<div class="relative nav-item">
+    <a href="/" class="w-8 transition-all duration-300 hover:scale-110 hover:blur-none hover:brightness-100">
+        <img src="https://i.postimg.cc/N0xygNsH/home-1.png" alt="Home">
+    </a>
+    <span class="tooltip">Home</span>
+</div>
+
+<!-- Projects Icon -->
+<div class="relative nav-item">
+    <a href="#page2" class="w-8 transition-all duration-300 hover:scale-110 hover:blur-none hover:brightness-100">
+        <img src="https://i.postimg.cc/dQdtjHdc/project-1.png" alt="Projects">
+    </a>
+    <span class="tooltip">Projects</span>
+</div>
+
+<!-- ID Card Icon -->
+<div class="relative nav-item">
+    <a href="#page3" class="w-8 transition-all duration-300 hover:scale-110 hover:blur-none hover:brightness-100">
+        <img src="https://i.postimg.cc/dtjszh4W/id-card-1.png" alt="About Me">
+    </a>
+    <span class="tooltip">About Me</span>
+</div>
+
+<!-- Resume Icon -->
+<div class="relative nav-item">
+    <a href="#page4" class="w-8 transition-all duration-300 hover:scale-110 hover:blur-none hover:brightness-100">
+        <img src="https://i.postimg.cc/9frcRJVS/resume-1.png" alt="Resume">
+    </a>
+    <span class="tooltip">Resume</span>
+</div>
+
+<!-- Contact Icon -->
+<div class="relative nav-item">
+    <a href="/" class="w-8 transition-all duration-300 hover:scale-110 hover:blur-none hover:brightness-100">
+        <img src="https://i.postimg.cc/cJ20QwLJ/contact-us-1.png" alt="Contact">
+    </a>
+    <span class="tooltip">Contact</span>
+</div>
+
+</div>
+
+<!-- Small Device Menu Button -->
+<button id="menu-btn" class="text-right relative w-full p-10 md:hidden">
+<i class="fa-solid fa-bars text-4xl text-white"></i>
+</button>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const navItems = document.querySelectorAll(".nav-item");
+
+    navItems.forEach(item => {
+        const link = item.querySelector("a");
+        const tooltip = item.querySelector(".tooltip");
+
+        link.addEventListener("mouseover", () => {
+            tooltip.style.opacity = "1";
+            // Blur other icons
+            navItems.forEach(other => {
+                if (other !== item) {
+                    other.querySelector("a").classList.add("blur-sm");
+                }
+            });
+        });
+
+        link.addEventListener("mouseout", () => {
+            tooltip.style.opacity = "0";
+            // Remove blur from other icons
+            navItems.forEach(other => {
+                other.querySelector("a").classList.remove("blur-sm");
+            });
+        });
+    });
+});
+</script>
+
+</body>
+
+</html>
