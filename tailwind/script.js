@@ -10,6 +10,25 @@ button.addEventListener("click", function(){
     openInNewTab('https://drive.google.com/file/d/13cvTo6V8J8f4Tk2Y6K4MEy4Ku5r_8rwa/view?usp=drive_link')
 })
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".scroll-link").forEach(anchor => {
+        anchor.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            let targetId = this.getAttribute("href").substring(1);
+            let targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -180,4 +199,84 @@ gsap.from("#page2 #box3",{
     }
 })
 
+// About page
 
+
+gsap.from("#page3 #img-left",{
+   
+    delay:2,
+    duration:5,
+    x:-80,
+    opacity:0,
+    scrollTrigger:{
+        trigger:" #img-left",
+        scroller:"body",   
+        start:"top 60%",
+        end:"top 30%",
+        scrub:2,
+    }
+})
+
+gsap.from("#page3 #text-right",{
+   
+    delay:2,
+    duration:5,
+    x:80,
+    opacity:0,
+    scrollTrigger:{
+        trigger:" #img-left",
+        scroller:"body",
+        start:"top 60%",
+        end:"top 30%",
+        
+        scrub:2,
+    }
+})
+
+
+gsap.from("#page4 #skills",{
+   
+    
+    duration:0.8,
+    x:80,
+    opacity:0,
+    scrollTrigger:{
+        trigger:"#page4",
+        scroller:"body",
+        
+        start:"top 60%",
+        end:"top 30%",
+     
+    }
+})
+
+gsap.from("#page4 .skills-left",{
+   
+    delay:2,
+    duration:5,
+    x:80,
+    opacity:0,
+    scrollTrigger:{
+        trigger:" .skills-left",
+        scroller:"body",
+        start:"top 60%",
+        end:"top 30%",
+        //markers:true,
+        scrub:2,
+    }
+})
+gsap.from("#page4 .skills",{
+   
+    delay:2,
+    duration:5,
+    x:-80,
+    opacity:0,
+    scrollTrigger:{
+        trigger:" .skills",
+        scroller:"body",
+        start:"top 60%",
+        end:"top 30%",
+        //markers:true,
+        scrub:2,
+    }
+})
