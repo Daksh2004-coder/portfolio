@@ -3,32 +3,6 @@ function openInNewTab(url) {
     const win = window.open(url, '_blank');
     win.focus();
   }
-
-
-button = document.querySelector("#button")
-button.addEventListener("click", function(){
-    openInNewTab('https://drive.google.com/file/d/13cvTo6V8J8f4Tk2Y6K4MEy4Ku5r_8rwa/view?usp=drive_link')
-})
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".scroll-link").forEach(anchor => {
-        anchor.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default anchor behavior
-
-            let targetId = this.getAttribute("href").substring(1);
-            let targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-});
-
-// loading animation
 // --------------------------------
 
         
@@ -55,6 +29,28 @@ const video = document.getElementById("loading-video");
             }, 1000);
         }
 // ---------------------------
+button = document.querySelector("#button")
+button.addEventListener("click", function(){
+    openInNewTab('https://drive.google.com/file/d/13cvTo6V8J8f4Tk2Y6K4MEy4Ku5r_8rwa/view?usp=drive_link')
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".scroll-link").forEach(anchor => {
+        anchor.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            let targetId = this.getAttribute("href").substring(1);
+            let targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
 
 
 
