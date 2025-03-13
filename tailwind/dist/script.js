@@ -2,12 +2,7 @@
 function openInNewTab(url) {
     const win = window.open(url, '_blank');
     win.focus();
-
   }
-
-
-
-
 // --------------------------------
 
         
@@ -34,9 +29,6 @@ const video = document.getElementById("loading-video");
             }, 1000);
         }
 // ---------------------------
-
-
-
 button = document.querySelector("#button")
 button.addEventListener("click", function(){
     openInNewTab('https://drive.google.com/file/d/13cvTo6V8J8f4Tk2Y6K4MEy4Ku5r_8rwa/view?usp=drive_link')
