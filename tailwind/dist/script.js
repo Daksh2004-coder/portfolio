@@ -4,30 +4,32 @@ function openInNewTab(url) {
     win.focus();
   }
 // --------------------------------
-
-        
-// Play the video but ensure it stops exactly at 3.5 seconds
 const video = document.getElementById("loading-video");
-        
-        video.play();
-        
-        setTimeout(() => {
-            video.currentTime = 3.8; // Force video to jump to 3.5s
-            video.pause();
-            hideLoadingScreen();
-        }, 3800);
+const videoSource = document.getElementById("video-source");
+const loadingScreen = document.getElementById("loading-screen");
+const mainContent = document.getElementById("main-content");
 
-        function hideLoadingScreen() {
-            const loadingScreen = document.getElementById("loading-screen");
-            const mainContent = document.getElementById("main-content");
-            
-            loadingScreen.classList.add("fade-out");
-            
-            setTimeout(() => {
-                loadingScreen.style.display = "none";
-                mainContent.classList.remove("hidden", "opacity-0");
-            }, 1000);
-        }
+// Prevent caching issues by appending timestamp to video source
+videoSource.src += Date.now();
+video.load();
+video.play();
+
+setTimeout(() => {
+    video.currentTime = 3.5; // Force video to jump to 3.5s
+    video.pause();
+    hideLoadingScreen();
+}, 3500);
+
+function hideLoadingScreen() {
+    loadingScreen.classList.add("fade-out");
+    document.body.classList.remove("overflow-hidden");
+    
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+        mainContent.classList.remove("hidden", "opacity-0");
+        mainContent.classList.add("fade-in");
+    }, 1000);
+}
 // ---------------------------
 button = document.querySelector("#button")
 button.addEventListener("click", function(){
