@@ -30,6 +30,19 @@ function hideLoadingScreen() {
         mainContent.classList.add("fade-in");
     }, 1000);
 }
+
+function hideLoadingScreen() {
+    loadingScreen.classList.add("fade-out");
+    
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+        document.body.classList.remove("overflow-hidden");
+        document.body.classList.add("overflow-auto");
+        mainContent.classList.remove("hidden", "opacity-0");
+        mainContent.classList.add("fade-in");
+    }, 1000);
+}
+
 // ---------------------------
 button = document.querySelector("#button")
 button.addEventListener("click", function(){
