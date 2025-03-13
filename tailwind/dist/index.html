@@ -4,22 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/styles.css" rel="stylesheet">
     <link rel="icon" type="image/png"
         href="https://i.postimg.cc/FRvp7nXg/initial-letter-dn-logo-nd-260nw-2416704123-enhanced-1-1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <link rel="stylesheet" crossorigin href="/assets/index-DWmyws_B.css">
-<!-- loading-page animation -->
-<style>
-    .fade-out {
-        opacity: 0;
-        transition: opacity 1s ease-out;
-    }
-    .fade-in {
-        opacity: 1;
-        transition: opacity 1s ease-in;
-    }
-</style>
 
+    <style>
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+    </style>
 </head>
 
 <body class="  overflow-y-auto overflow-x-hidden
@@ -30,8 +25,14 @@ dark:[&::-webkit-scrollbar-track]:bg-zinc-700
 dark:[&::-webkit-scrollbar-thumb]:bg-yellow-600
 [&::-webkit-scrollbar-thumb]:rounded-xl
 [&::-webkit-scrollbar-track]: rounded-2xl ">
-
-
+<!-- ----------------------------------- -->
+<div class="fixed inset-0 flex items-center justify-center bg-black z-50 transition-opacity duration-1000" id="loading-screen">
+    <video class="w-full h-full object-cover" autoplay muted id="loading-video">
+        <source src="./Comp1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<!-- --------------------------------------- -->
 
     <!-- main page / home page -->
     <section class="h-full w-full bg-zinc-900 bg-no-repeat bg-cover bg-fixed "
@@ -447,12 +448,12 @@ style="background-image: url('https://i.postimg.cc/MHTVw6Y2/Frame-3.png')" id="p
      <div class="flex flex-col gap-4 text-2xl">
         <div><h2 class="text-center font-bold">Follow us on</h2></div>
         <div class="gap-5 flex ">
-        <a href="https://www.linkedin.com/in/daksh-nanoma-b62439337/"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/Daksh2004-coder/"><i class="fa-brands fa-github"></i></a>
-        <a href="https://x.com/daksh_nanoma"><i class="fa-brands fa-square-x-twitter"></i></a>
-        <a href="https://www.instagram.com/creatorstrange1/"><i class="fa-brands fa-square-instagram"></i></a>
-        <a href="https://www.youtube.com/channel/UCHn9GNLJi1yDsBDmXD46woQ"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dakshnanoma91@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/daksh-nanoma-b62439337/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Daksh2004-coder/"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/daksh_nanoma"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://www.instagram.com/creatorstrange1/"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCHn9GNLJi1yDsBDmXD46woQ"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dakshnanoma91@gmail.com"><i class="fa-solid fa-envelope"></i></a>
     </div>
     <div class="text-[12px] text-center"><i class="fa-regular fa-copyright"></i>  2025 Daksh Nanoma. All Rights Reserved.</div>
     </div>

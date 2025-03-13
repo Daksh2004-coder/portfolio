@@ -2,7 +2,39 @@
 function openInNewTab(url) {
     const win = window.open(url, '_blank');
     win.focus();
+
   }
+
+
+
+
+// --------------------------------
+
+        
+// Play the video but ensure it stops exactly at 3.5 seconds
+const video = document.getElementById("loading-video");
+        
+        video.play();
+        
+        setTimeout(() => {
+            video.currentTime = 3.8; // Force video to jump to 3.5s
+            video.pause();
+            hideLoadingScreen();
+        }, 3800);
+
+        function hideLoadingScreen() {
+            const loadingScreen = document.getElementById("loading-screen");
+            const mainContent = document.getElementById("main-content");
+            
+            loadingScreen.classList.add("fade-out");
+            
+            setTimeout(() => {
+                loadingScreen.style.display = "none";
+                mainContent.classList.remove("hidden", "opacity-0");
+            }, 1000);
+        }
+// ---------------------------
+
 
 
 button = document.querySelector("#button")
