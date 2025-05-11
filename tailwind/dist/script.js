@@ -13,7 +13,7 @@ function openInNewTab(url) {
 
 button = document.querySelector("#button")
 button.addEventListener("click", function(){
-    openInNewTab('https://drive.google.com/file/d/13cvTo6V8J8f4Tk2Y6K4MEy4Ku5r_8rwa/view?usp=drive_link')
+    openInNewTab('https://drive.google.com/file/d/1JsNPW9ieCizqOOyvl9PGcRHXC6a_lBmN/view?usp=sharing')
 })
 
 document.addEventListener("DOMContentLoaded", function () {
